@@ -95,7 +95,7 @@ __powerline() {
 
     __docker_machine_ps1 () {
         if test $DOCKER_MACHINE_NAME; then
-            local status=$(docker-machine status $DOCKER_MACHINE_NAME)
+            local status=$(docker-machine status $DOCKER_MACHINE_NAME 2> /dev/null)
             case $status in
                 Running)
                     status=" $DOCKER_RUNNING_SYMBOL"
